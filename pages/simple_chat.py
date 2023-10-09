@@ -18,13 +18,13 @@ llm_prompt = ChatPromptTemplate(
     messages=[
         SystemMessagePromptTemplate.from_template(
             # This prompt tells the chatbot how to respond. Try modifying it.
-            "You are an AI assistant."
+            "You are an AI assistant. A professional in any industry."
         ),
         HumanMessagePromptTemplate.from_template("{message}")
     ]
 )
 
-if prompt := st.chat_input(placeholder="Ask anything."):
+if prompt := st.chat_input(placeholder="Ask me anything."):
     st.chat_message("user").write(prompt)
 
     if not openai_api_key:
